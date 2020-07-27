@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.dao.DocumentDao">
+    <resultMap id="document_resultMap" type="com.example.demo.dataobject.Document">
+        <id column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="summary" property="summary"/>
+        <result column="label" property="label"/>
+        <result column="link" property="link"/>
+        <result column="source_link" property="sourceLink"/>
+        <result column="modify_time" property="modifyTime"/>
+        <result column="user" property="user"/>
+        <result column="reading_volume" property="readingVolume"/>
+        <result column="downloads" property="downloads"/>
+        <result column="support_download" property="supportDownload"/>
+        <result column="support_reference" property="supportReference"/>
+        <result column="reference_id" property="referenceId"/>
+        <result column="classification" property="classification"/>
+        <result column="size" property="size"/>
+        <result column="state" property="state"/>
+        <result column="status" property="status"/>
+        <result column="convert_status" property="convertStatus"/>
+        <result column="create_time" property="createTime"/>
+    </resultMap>
+    <sql id="document_column">
+     id,title,user,reading_volume,downloads,support_download,support_reference,reference_id,classification,size,link,source_link,state,status,convert_status,modify_time,create_time, summary, label
+    </sql>
+    <insert id="create">
+        insert  into document
+        (title,user,support_download,support_reference,classification,source_link,modify_time,create_time)
+        values (#{title},#{user},#{supportDownload},#{supportReference},#{classification},#{sourceLink},#{modifyTime},#{createTime})
+    </insert>
+    <update id="update" parameterType="com.example.demo.dataobject.Document">
+        update document
+        <set>
+            <if test="title!=null">title= #{title},</if>
+            <if test="sourceLink!=null">`document`.`source_link`= #{sourceLink},</if>
+            <if test="summary!=null">summary= #{summary},</if>
+            <if test="supportDownload!=null">`document`.`support_download`= #{supportDownload},</if>
+            <if test="supportReference!=null">`document`.`support_reference`= #{supportReference},</if>
+            <if test="classification!=null">classification= #{classification}</if>
+        </set>
+        where id=#{id}
+    </update>
+
+    <!--查询所有文件-->
+    <select id="selectDocument" resultMap="document_resultMap">
+        select
+        <include refid="document_column"/>
+        from document
+    </select>
+
+    <select id="selectDocumentByCondition" parameterType="com.example.demo.common.Query" resultMap="document_resultMap">
+        select
+        <include refid="document_column"/>
+        from document
+        <where>
+            <if test="startTime!=null">and #{startTime} <![CDATA[ <= ]]> create_time</if>
+            <if test="endTime!=null">and create_time <![CDATA[ <= ]]> #{endTime}</if>
+            <if test="classification!=null">and classification = #{classification}</if>
+            <if test="title!=''">and position(#{title} in title)</if>
+        </where>
+    </select>
+    <select id="selectByTitle" parameterType="com.example.demo.common.Query" resultMap="document_resultMap">
+        select
+        <include refid="document_column"/>
+        from document
+        <where>
+            <if test="title!=''">and position(#{title} in title)</if>
+        </where>
+    </select>
+    <select id="selectById" parameterType="Integer" resultMap="document_resultMap">
+        select
+        <include refid="document_column"/>
+        from document
+        <where>
+            id=#{id}
+        </where>
+    </select>
+    <select id="selectMyFavorites" resultMap="document_resultMap">
+        select
+        document.id,title,document.user,reading_volume,downloads,support_download,support_reference,reference_id,classification,size,link,source_link,state,document.status,convert_status,document.modify_time,document.create_time, summary, label
+        FROM
+        document,favorites
+        where document.id=favorites.document AND favorites.`user`=1;
+    </select>
+    <select id="selectMyPublish"  resultMap="document_resultMap">
+        select
+        <include refid="document_column"/>
+        FROM
+        document
+        where document.user=1
+    </select>
+
+
+</mapper>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>上传文件</title>
+    <script th:src="@{https://how2j.cn/study/js/jquery/2.0.0/jquery.min.js}"></script>
+    <link th:href="@{https://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css}" rel="stylesheet">
+    <script th:src="@{https://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js}"></script>
+    <link rel="stylesheet" th:href="@{https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css}">
+</head>
+<body>
+<h1>上传文件</h1>
+<div id="left" style="width: 10%;height:100%;float: left">
+    <ul class="list-group">
+        <li class="list-group-item"><a href="/document/search_document">全部文件</a></li>
+        <li class="list-group-item"><a href="/document/myFavorites">我的收藏</a></li>
+        <li class="list-group-item"><a href="/document/myPublish">我的发表</a></li>
+        <li class="list-group-item"><a href=""></a></li>
+        <li class="list-group-item"><a href=""></a></li>
+    </ul>
+</div>
+<div id="right" style="width:90%;height:100%;float: left">
+<form action="/document/create" method="post" enctype="multipart/form-data">
+    分类： <select  class="form-control" name="classification">
+    <option th:each="classifications:${classificationList}"
+            th:value="${classifications.id}" th:text="${classifications .getTitle()  }"></option>
+</select><br/>
+    简介：<textarea class="form-control" name="summary"></textarea> <br/>
+    标签：<input type="text" class="form-control" name="label"> <br/>
+    附件：<input type="file" id="fileId" name="file" value="选择文件"/> <br/>
+    支持下载：<select name="supportDownload" class="form-control">
+    <option value="1">是</option>
+    <option value="0">否</option>
+</select> <br/>
+    允许引用：<select name="supportReference" class="form-control">
+    <option value="1">是</option>
+    <option value="0">否</option>
+</select> <br/>
+
+    <button type="submit" class="btn btn-success">上传</button>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+2020-07-24 00:26:31  [ DubboShutdownHook:14082816 ] - [ INFO ]   [DUBBO] Run shutdown hook now., dubbo version: 2.7.3, current host: 192.168.31.92
+2020-07-24 00:26:31  [ DubboShutdownHook:14082821 ] - [ INFO ]   [DUBBO] Close all registries [], dubbo version: 2.7.3, current host: 192.168.31.92
+2020-07-24 00:26:53  [ main:0 ] - [ INFO ]  using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2020-07-24 09:33:53  [ DubboShutdownHook:32820116 ] - [ INFO ]   [DUBBO] Run shutdown hook now., dubbo version: 2.7.3, current host: 172.16.15.187
+2020-07-24 09:33:53  [ DubboShutdownHook:32820123 ] - [ INFO ]   [DUBBO] Close all registries [], dubbo version: 2.7.3, current host: 172.16.15.187
+2020-07-24 09:34:03  [ main:1 ] - [ INFO ]  using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2020-07-24 09:58:47  [ DubboShutdownHook:1483926 ] - [ INFO ]   [DUBBO] Run shutdown hook now., dubbo version: 2.7.3, current host: 172.16.15.187
+2020-07-24 09:58:47  [ DubboShutdownHook:1483930 ] - [ INFO ]   [DUBBO] Close all registries [], dubbo version: 2.7.3, current host: 172.16.15.187
+2020-07-24 09:58:58  [ main:0 ] - [ INFO ]  using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2020-07-24 10:02:26  [ DubboShutdownHook:208068 ] - [ INFO ]   [DUBBO] Run shutdown hook now., dubbo version: 2.7.3, current host: 172.16.15.187
+2020-07-24 10:02:26  [ DubboShutdownHook:208073 ] - [ INFO ]   [DUBBO] Close all registries [], dubbo version: 2.7.3, current host: 172.16.15.187
+2020-07-24 10:02:39  [ main:0 ] - [ INFO ]  using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2020-07-24 10:06:21  [ DubboShutdownHook:222833 ] - [ INFO ]   [DUBBO] Run shutdown hook now., dubbo version: 2.7.3, current host: 172.16.15.187
+2020-07-24 10:06:21  [ DubboShutdownHook:222835 ] - [ INFO ]   [DUBBO] Close all registries [], dubbo version: 2.7.3, current host: 172.16.15.187
+2020-07-24 10:06:31  [ main:0 ] - [ INFO ]  using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2020-07-24 10:17:04  [ DubboShutdownHook:633226 ] - [ INFO ]   [DUBBO] Run shutdown hook now., dubbo version: 2.7.3, current host: 172.16.15.187
+2020-07-24 10:17:04  [ DubboShutdownHook:633229 ] - [ INFO ]   [DUBBO] Close all registries [], dubbo version: 2.7.3, current host: 172.16.15.187
+2020-07-24 10:17:16  [ main:0 ] - [ INFO ]  using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2020-07-24 10:19:32  [ DubboShutdownHook:135927 ] - [ INFO ]   [DUBBO] Run shutdown hook now., dubbo version: 2.7.3, current host: 172.16.15.187
+2020-07-24 10:19:32  [ DubboShutdownHook:135932 ] - [ INFO ]   [DUBBO] Close all registries [], dubbo version: 2.7.3, current host: 172.16.15.187
+2020-07-24 10:19:42  [ main:0 ] - [ INFO ]  using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2020-07-24 10:26:11  [ DubboShutdownHook:388834 ] - [ INFO ]   [DUBBO] Run shutdown hook now., dubbo version: 2.7.3, current host: 172.16.15.187
+2020-07-24 10:26:11  [ DubboShutdownHook:388841 ] - [ INFO ]   [DUBBO] Close all registries [], dubbo version: 2.7.3, current host: 172.16.15.187
+2020-07-24 10:26:27  [ main:0 ] - [ INFO ]  using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2020-07-24 10:31:43  [ DubboShutdownHook:316523 ] - [ INFO ]   [DUBBO] Run shutdown hook now., dubbo version: 2.7.3, current host: 172.16.15.187
+2020-07-24 10:31:43  [ DubboShutdownHook:316526 ] - [ INFO ]   [DUBBO] Close all registries [], dubbo version: 2.7.3, current host: 172.16.15.187
+2020-07-24 10:31:53  [ main:0 ] - [ INFO ]  using logger: org.apache.dubbo.common.logger.log4j.Log4jLoggerAdapter

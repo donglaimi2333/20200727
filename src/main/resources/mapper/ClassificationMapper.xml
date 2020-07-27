@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.dao.ClassificationDao">
+
+    <sql id="classification_column">
+        id,parent_id,title,department,state,type,status,creator,modify_time,create_time,typy
+    </sql>
+
+    <select id="findAll" resultType="com.example.demo.service.model.ClassificationModel">
+        select
+        <include refid="classification_column"/>
+        from classification
+
+    </select>
+    <select id="selectById" resultType="com.example.demo.service.model.ClassificationModel">
+        select
+        <include refid="classification_column"/>
+        from classification
+        <where>
+            id=#{classification}
+        </where>
+    </select>
+</mapper>
